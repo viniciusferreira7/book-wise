@@ -3,10 +3,13 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 
-const nunito = Nunito({ subsets: ['latin'] })
+const nunito = Nunito({ subsets: ['latin'], variable: '--font-nunito' })
 
 export const metadata: Metadata = {
-  title: 'Book wise',
+  title: {
+    template: '%s | Book Wise',
+    absolute: 'Book Wise',
+  },
 }
 
 export default function RootLayout({
@@ -15,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={nunito.className}>{children}</body>
+    <html lang="pt-BR">
+      <body className={`${nunito.variable} bg-zinc-950`}>{children}</body>
     </html>
   )
 }
