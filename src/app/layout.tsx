@@ -19,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${nunito.variable} bg-zinc-950`}>{children}</body>
+      <body
+        className={`${nunito.variable} font-nunito bg-background text-muted-foreground`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
