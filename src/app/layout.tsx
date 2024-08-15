@@ -2,6 +2,7 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 
 const nunito = Nunito({ subsets: ['latin'], variable: '--font-nunito' })
 
@@ -20,9 +21,17 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${nunito.variable} font-nunito bg-background text-muted-foreground`}
+        className={`${nunito.variable} bg-background font-nunito text-muted-foreground`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          storageKey="book-wise-theme"
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

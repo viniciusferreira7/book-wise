@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 
+import { ModeToggle } from '../components/mode-toggle'
 import { AccessAsVisitor } from './components/access-as-visitor'
 import { SignInGitHub } from './components/sign-in-github'
 import { SignInGoogle } from './components/sign-in-google'
@@ -22,6 +23,9 @@ export default function Home() {
         />
       </header>
       <main className="grid w-full place-items-center">
+        <div className="absolute right-2 top-2">
+          <ModeToggle />
+        </div>
         <div className="w-full max-w-[372px]">
           <h1 className="mb-0.5 text-2xl font-semibold">Boas vindas!</h1>
           <h2 className="mb-10 text-lg font-medium">
