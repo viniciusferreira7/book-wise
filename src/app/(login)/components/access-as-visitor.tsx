@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 export function AccessAsVisitor() {
   return (
     <Button
-      className="w-full justify-start gap-5 rounded-lg bg-gray-800 text-white px-6 py-5 text-lg font-semibold"
+      className="w-full justify-start gap-5 rounded-lg bg-gray-800 px-6 py-5 text-lg font-semibold text-white"
       size="auto"
     >
       <RocketSVG width={32} height={32} />
