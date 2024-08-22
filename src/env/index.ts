@@ -7,6 +7,8 @@ export const envSchema = z
     DATABASE_PASSWORD: z.string().optional(),
     DATABASE_NAME: z.string().optional(),
     DATABASE_URL: z.string().url().optional(),
+    GOOGLE_CLIENT_ID: z.string(),
+    GOOGLE_CLIENT_SECRET: z.string(),
   })
   .superRefine((data, ctx) => {
     if (process.env.CI === 'true') {
