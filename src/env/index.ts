@@ -13,6 +13,8 @@ export const envSchema = z
     GOOGLE_CLIENT_SECRET: z.string(),
     NEXTAUTH_URL: z.string(),
     NEXTAUTH_SECRET: z.string(),
+    GITHUB_ID: z.string(),
+    GITHUB_SECRET: z.string(),
   })
   .superRefine((data, ctx) => {
     if (process.env.CI === 'true') {

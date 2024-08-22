@@ -1,4 +1,5 @@
 import { AuthOptions } from 'next-auth'
+import GitHubProvider from 'next-auth/providers/github'
 import GoogleProvider, { GoogleProfile } from 'next-auth/providers/google'
 
 import { env } from '@/env'
@@ -28,6 +29,10 @@ export const authOptions = {
           image: profile.picture,
         }
       },
+    }),
+    GitHubProvider({
+      clientId: env.GITHUB_ID,
+      clientSecret: env.GITHUB_SECRET,
     }),
   ],
   callbacks: {
