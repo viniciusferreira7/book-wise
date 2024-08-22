@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 export const envSchema = z
   .object({
+    NODE_ENV: z.enum(['dev', 'test', 'production']).default('dev'),
     DATABASE_USERNAME: z.string().optional(),
     DATABASE_PASSWORD: z.string().optional(),
     DATABASE_NAME: z.string().optional(),
