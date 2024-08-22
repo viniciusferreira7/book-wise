@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 
-import { ModeToggle } from '../components/mode-toggle'
+import { ModeToggle } from '@/app/components/mode-toggle'
+
 import { AccessAsVisitor } from './components/access-as-visitor'
 import { SignInGitHub } from './components/sign-in-github'
 import { SignInGoogle } from './components/sign-in-google'
