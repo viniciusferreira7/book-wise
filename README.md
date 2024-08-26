@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src=".github/logo.svg">
+</p>
 
-## Getting Started
+<p align="center">
+  <a href="LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/EliasGcf/book-wise?color=%239694F5"></a>
+</p>
 
-First, run the development server:
+<p align="center">
+  <a href="#-layout">Layout</a> •
+  <a href="#-technologies">Technologies</a> •
+  <a href="#-getting-started">Getting started</a> •
+  <a href="#-license">License</a>
+</p>
+
+## 🔖 Layout
+
+You can view the project layout through the link below:
+
+<!-- TODO: Fix link -->
+- [BookWise - Figma](https://www.figma.com/@rocketseat)
+
+Remembering that you need to have a [Figma](http://figma.com) account to access it.
+
+## 🚀 Technologies
+
+- [ReactJS](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/) (AppDir)
+- [NextAuth](https://next-auth.js.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [Prisma](https://www.prisma.io/)
+
+## 💻 Getting started
+
+### Requirements
+
+- [Node.js](https://nodejs.org/en/)
+- [PNPM](https://pnpm.io/)
+- [Docker & DockerCompose](https://docs.docker.com/)
+
+**Clone the project and access the folder**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/viniciusferreira7/book-wise && cd book-wise
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Follow the steps below**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Install the dependencies
+$ pnpm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Make a copy of '.env.local.example' to '.env.local'
+# and set with YOUR environment variables.
+$ cp .env.local.example .env.local
 
-## Learn More
+# Start the database
+$ docker compose up -d
 
-To learn more about Next.js, take a look at the following resources:
+# Start the application
+$ pnpm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="center">
+  Made with 💜 by <a href="https://www.linkedin.com/in/vinicius-ferreira-84b68b162/">Vinicius</a>
+</p>
