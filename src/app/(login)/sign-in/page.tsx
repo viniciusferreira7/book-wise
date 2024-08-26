@@ -21,6 +21,7 @@ export default function Home() {
           width={598}
           height={912}
           className="h-full w-full max-w-[589px] object-contain"
+          property="true"
         />
       </header>
       <main className="grid w-full place-items-center">
