@@ -1,0 +1,25 @@
+import Image from 'next/image'
+
+import { Menu } from './components/menu'
+
+export function SideBar() {
+  return (
+    <aside className="h-full p-5">
+      <div className="flex h-full w-56 flex-col items-center rounded-xl bg-[url('/assets/svg/side-bar-background.svg')] pb-6 pt-10">
+        <div className="mb-16 flex items-center justify-center gap-2">
+          <Image
+            src="/assets/logo.png"
+            alt="Logo do Book wise"
+            width={24}
+            height={24}
+            priority={true}
+          />
+          <h1 className="bg-gradient-to-r from-[#7FD1CC] to-[#9694F5] bg-clip-text text-xl font-bold text-transparent">
+            BookWise
+          </h1>
+        </div>
+        <Menu />
+      </div>
+    </aside>
+  )
+}

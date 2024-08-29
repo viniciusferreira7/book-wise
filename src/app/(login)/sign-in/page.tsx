@@ -16,7 +16,7 @@ export default function Home() {
     <div className="flex h-screen p-4">
       <header className="h-full w-full max-w-[589px]">
         <Image
-          src="/assets/home.png"
+          src="/assets/sign-in.png"
           alt="Image de capa do book wise"
           width={598}
           height={912}
