@@ -17,7 +17,7 @@ export function AccessAsVisitor() {
 
   return (
     <Button
-      className="w-full justify-start gap-5 rounded-lg bg-gray-800 px-6 py-5 text-lg font-semibold text-white hover:dark:bg-primary/50"
+      className="w-full justify-start gap-5 rounded-lg bg-gray-800 px-6 py-5 text-lg font-semibold text-white hover:dark:bg-primary/30"
       size="auto"
       onClick={handleAccessAsVisitor}
     >

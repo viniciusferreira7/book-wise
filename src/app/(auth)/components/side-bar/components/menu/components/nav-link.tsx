@@ -23,11 +23,17 @@ export function NavLink({ children, className, ...props }: NavLinkProps) {
       data-current={isSamePathname}
       {...props}
       className={cn(
-        'flex items-center gap-4 data-[current=true]:font-bold data-[current=true]:text-foreground',
+        'flex items-center gap-4 py-2 data-[current=true]:font-bold data-[current=true]:text-foreground',
         className,
       )}
     >
-      {isSamePathname && <div className={'block h-full w-4 bg-red-700'} />}
+      <div
+        className={cn(
+          'bg-transparent',
+          isSamePathname &&
+            'block h-full w-[4px] rounded-md bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]',
+        )}
+      />
       <div className="flex items-center gap-3">{children}</div>
     </Link>
   )
