@@ -16,14 +16,12 @@ export function NavLink({ children, className, ...props }: NavLinkProps) {
 
   const isSamePathname = pathname === props.href
 
-  console.log({ isSamePathname })
-
   return (
     <Link
       data-current={isSamePathname}
       {...props}
       className={cn(
-        'flex items-center gap-4 py-2 data-[current=true]:font-bold data-[current=true]:text-foreground',
+        'flex items-center gap-4 py-2 data-[current=true]:font-bold data-[current=true]:text-primary-foreground dark:data-[current=true]:text-foreground',
         className,
       )}
     >

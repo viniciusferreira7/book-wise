@@ -1,4 +1,4 @@
-import { SideBar } from './components/sidebar'
+import { Sidebar } from './components/sidebar'
 
 export default function AuthLayout({
   children,
@@ -6,8 +6,8 @@ export default function AuthLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="flex h-screen">
-      <SideBar />
+    <div className="flex h-screen gap-24">
+      <Sidebar />
       {children}
     </div>
   )

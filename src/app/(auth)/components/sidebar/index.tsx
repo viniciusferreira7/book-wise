@@ -2,10 +2,10 @@ import Image from 'next/image'
 
 import { Menu } from './components/menu'
 
-export function SideBar() {
+export function Sidebar() {
   return (
     <aside className="h-full p-5">
-      <div className="flex h-full w-56 flex-col items-center rounded-xl bg-[url('/assets/svg/side-bar-background.svg')] pb-6 pt-10">
+      <div className="flex h-full w-56 flex-col items-start rounded-xl bg-[url('/assets/svg/side-bar-background.svg')] px-6 pb-6 pt-10">
         <div className="mb-16 flex items-center justify-center gap-2">
           <Image
             src="/assets/logo.png"

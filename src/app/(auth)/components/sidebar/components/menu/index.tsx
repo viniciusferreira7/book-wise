@@ -3,6 +3,7 @@
 import { Binoculars, House, LogIn } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
+import { ModeToggle } from '@/app/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { deleteCookie } from '@/utils/cookie/delete-cookie'
 
@@ -27,14 +28,17 @@ export function Menu() {
           <Binoculars size={24} className="size-5" /> Explorar
         </NavLink>
       </div>
-      <Button
-        className="gap-4 font-bold text-primary"
-        variant="ghost"
-        onClick={handleSign}
-      >
-        Fazer login
-        <LogIn size={24} className="size-5 text-emerald-500" />
-      </Button>
+      <div className="flex items-center justify-end gap-2">
+        <ModeToggle />
+        <Button
+          className="gap-4 font-bold text-primary-foreground dark:text-primary"
+          variant="ghost"
+          onClick={handleSign}
+        >
+          Fazer login
+          <LogIn size={24} className="size-5 text-emerald-500" />
+        </Button>
+      </div>
     </nav>
   )
 }
