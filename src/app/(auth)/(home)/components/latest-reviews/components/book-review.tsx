@@ -1,12 +1,13 @@
-import Image from 'next/image'
+import { Star } from 'lucide-react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 
 export function BookReview() {
   return (
-    <Card className="h-full w-full space-y-10 border-transparent bg-gray-900">
-      <CardHeader className="flex-row justify-between">
+    <Card className="w-full space-y-8 border-transparent bg-gray-900 p-6">
+      <CardHeader className="flex-row justify-between p-0">
         <div className="flex items-center gap-4">
           <Avatar className="bg-gradient-to-b from-[#7FD1CC] to-[#9694F5] p-[1.5px]">
             <AvatarImage
@@ -21,17 +22,43 @@ export function BookReview() {
             <p className="text-muted-foreground">Hoje</p>
           </div>
         </div>
+        <div className="flex gap-1">
+          <Star fill="#9694F5" stroke="none" className="size-6" />
+          <Star fill="#9694F5" stroke="none" className="size-6" />
+          <Star fill="#9694F5" stroke="none" className="size-6" />
+          <Star fill="#9694F5" stroke="none" className="size-6" />
+          <Star stroke="#9694F5" className="size-6" />
+        </div>
       </CardHeader>
-      <CardContent className="h-full w-full">
-        <div className="h-full w-full rounded-sm bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]" />
-        <div>
-          <h3>O Hobbit</h3>
+      <CardContent className="flex h-[152px] w-full items-start gap-5 p-0">
+        <div className="h-full w-1/6 rounded-sm bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]" />
+
+        <div className="h-full w-full">
+          <h3 className="text-base font-semibold">O Hobbit</h3>
+          <p className="text-sm text-gray-400">J.R.R. Tolkien</p>
+          <div>
+            <p className="line-clamp-4 text-sm font-light text-gray-300">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+              sit, debitis tempore nemo harum ea dolorum omnis magnam! Odio, non
+              sit, debitis tempore nemo harum ea dolorum omnis magnam! Odio, non
+              sit, debitis tempore nemo harum ea dolorum omnis magnam! Odio, non
+              sit, debitis tempore nemo harum ea dolorum omnis magnam! Odio, non
+              sit, debitis tempore nemo harum ea dolorum omnis magnam! Odio, non
+              sit, debitis tempore nemo harum ea dolorum omnis magnam! Odio, non
+              sit, debitis tempore nemo harum ea dolorum omnis magnam! Odio, non
+              temporibus ipsum totam suscipit ut sed quam eum error obcaecati?
+            </p>
+            <Button
+              variant="ghost"
+              size="auto"
+              className="text-sm text-purple-300"
+            >
+              ver mais
+            </Button>
+          </div>
         </div>
         {/* <Image src=""/> */}
       </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
     </Card>
   )
 }
