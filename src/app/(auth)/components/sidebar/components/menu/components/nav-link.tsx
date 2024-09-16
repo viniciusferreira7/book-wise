@@ -29,7 +29,7 @@ export function NavLink({ children, className, ...props }: NavLinkProps) {
         className={cn(
           'bg-transparent',
           isSamePathname &&
-            'block h-full w-[4px] rounded-md bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]',
+            'block h-full w-[0.25rem] rounded-md bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]',
         )}
       />
       <div className="flex items-center gap-3">{children}</div>

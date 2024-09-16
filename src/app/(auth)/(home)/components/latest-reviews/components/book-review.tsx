@@ -1,5 +1,4 @@
-import { Star } from 'lucide-react'
-
+import { RatingStars } from '@/app/(auth)/components/rating-stars'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
@@ -9,7 +8,7 @@ export function BookReview() {
     <Card className="w-full space-y-8 border-transparent bg-gray-900 p-6">
       <CardHeader className="flex-row justify-between p-0">
         <div className="flex items-center gap-4">
-          <Avatar className="bg-gradient-to-b from-[#7FD1CC] to-[#9694F5] p-[1.5px]">
+          <Avatar className="bg-gradient-to-b from-[#7FD1CC] to-[#9694F5] p-[0.094rem]">
             <AvatarImage
               src="https://github.com/shadcn.png"
               alt="@shadcn"
@@ -22,15 +21,9 @@ export function BookReview() {
             <p className="text-muted-foreground">Hoje</p>
           </div>
         </div>
-        <div className="flex gap-1">
-          <Star fill="#9694F5" stroke="none" className="size-6" />
-          <Star fill="#9694F5" stroke="none" className="size-6" />
-          <Star fill="#9694F5" stroke="none" className="size-6" />
-          <Star fill="#9694F5" stroke="none" className="size-6" />
-          <Star stroke="#9694F5" className="size-6" />
-        </div>
+        <RatingStars numberOfStars={4} />
       </CardHeader>
-      <CardContent className="flex h-[152px] w-full items-start gap-5 p-0">
+      <CardContent className="flex h-[9.5rem] w-full items-start gap-5 p-0">
         <div className="h-full w-1/6 rounded-sm bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]" />
 
         <div className="h-full w-full">
