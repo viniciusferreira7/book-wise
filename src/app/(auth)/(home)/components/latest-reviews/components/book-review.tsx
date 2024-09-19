@@ -17,7 +17,7 @@ export function BookReview() {
             <AvatarFallback>JD</AvatarFallback>
           </Avatar>
           <div>
-            <p className="text-primary">John Doe</p>
+            <p className="text-muted dark:text-primary">John Doe</p>
             <p className="text-muted-foreground">Hoje</p>
           </div>
         </div>
@@ -27,7 +27,9 @@ export function BookReview() {
         <div className="h-full w-1/6 rounded-sm bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]" />
 
         <div className="h-full w-full">
-          <h3 className="text-base font-semibold">O Hobbit</h3>
+          <h3 className="text-base font-semibold text-muted dark:text-primary">
+            O Hobbit
+          </h3>
           <p className="text-sm text-gray-400">J.R.R. Tolkien</p>
           <div>
             <p className="line-clamp-4 text-sm font-light text-gray-300">

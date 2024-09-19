@@ -15,7 +15,9 @@ export function PopularBook() {
         <div className="h-full w-full rounded-sm bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]" />
       </CardHeader>
       <CardContent className="col-span-2 row-span-2 p-0">
-        <CardTitle className="text-sm">CardTitle</CardTitle>
+        <CardTitle className="text-sm text-muted dark:text-primary">
+          CardTitle
+        </CardTitle>
         <CardDescription className="text-xs">Card Content</CardDescription>
       </CardContent>
       <CardFooter className="col-span-2 p-0">
