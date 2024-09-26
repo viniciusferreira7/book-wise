@@ -15,7 +15,7 @@ export default function HomePage() {
         <h1 className="flex items-end gap-3 text-xl font-bold text-foreground">
           <House size={24} className="size-7 text-emerald-700" /> Início
         </h1>
-        <div className="flex items-start justify-between gap-20 pr-24">
+        <div className="flex flex-col items-start justify-between gap-20 pr-24 md:flex-row">
           <LatestReviews />
           <PopularBooks />
         </div>

@@ -8,8 +8,8 @@ import { ModeToggle } from '@/app/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { deleteCookie } from '@/utils/cookie/delete-cookie'
 
-import { NavLink } from './components/nav-link'
-import { Profile } from './components/profile'
+import { NavLink } from './nav-link'
+import { Profile } from './profile'
 
 export function Menu() {
   const router = useRouter()
