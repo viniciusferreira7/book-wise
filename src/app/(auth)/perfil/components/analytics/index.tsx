@@ -11,8 +11,6 @@ interface AnalyticsProps {
 export function Analytics({ session }: AnalyticsProps) {
   const avatarUrl = session?.user?.image ?? 'https://github.com/shadcn.png'
 
-  console.log({ session })
-
   const fullName = session?.user?.name ? session?.user?.name?.split(' ') : []
   const fallback = `${fullName[0][0]}${fullName[fullName.length - 1][0]}`
 
