@@ -9,39 +9,22 @@ export function Categories() {
   const [categories, setCategories] = useQueryState('categories')
 
   function handleChangeCategories(name: string, checkedState: CheckedState) {
-    console.log({ name })
+    setCategories((previousCategories) => {
+      if (previousCategories) {
+        const values = previousCategories.split(',')
 
-    setCategories((old) => {
-      if (checkedState === true && !old) return name
-      if (checkedState === true && old) {
-        const categoriesInArray = old.split(',')
+        if (!checkedState) {
+          const filteredValues = values.filter((item) => item !== name)
 
-        const categoryByNameIndex = categoriesInArray.findIndex(
-          (category) => category === name,
-        )
-
-        if (categoryByNameIndex >= 0) return old
-
-        if (categoryByNameIndex === -1) {
-          categoriesInArray.push(name)
-
-          return categoriesInArray.join(',')
+          return filteredValues.join(',')
+        } else {
+          values.push(name)
         }
+
+        return values.join(',')
+      } else {
+        return name
       }
-
-      if (checkedState === false && old) {
-        const categoriesInArray = old.split(',')
-
-        const categoryByNameIndex = categoriesInArray.findIndex(
-          (category) => category === name,
-        )
-
-        if (categoryByNameIndex >= 0) {
-          return categoriesInArray.splice(categoryByNameIndex, 1).join(',')
-        }
-      }
-
-      return old
     })
   }
 
