@@ -28,6 +28,7 @@ export function Analytics({ session }: AnalyticsProps) {
             {shortName}
           </h2>
           <h3 className="text-gray-400">membro desde ontem</h3>
+          {/* TODO: (Cria uma rota para pegar os dados da conta incluindo a data de criação no app) */}
         </div>
       </div>
       <div className="h-2 w-8 rounded-lg bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]" />
