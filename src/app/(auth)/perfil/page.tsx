@@ -8,12 +8,20 @@ import { Analytics } from './components/analytics'
 import { SearchBook } from './components/search-book'
 import { YourBooks } from './components/your-books'
 
-export const metadata: Metadata = {
-  title: 'Perfil',
+export async function generateMetadata(): Promise<Metadata> {
+  const session = await getServerSession(authOptions)
+
+  const username = session?.user.name
+
+  return {
+    title: `${username} | Perfile`,
+  }
 }
 
 export default async function ProfilePage() {
   const session = await getServerSession(authOptions)
+
+  
 
   return (
     <main className="h-full w-full pt-[4.5rem]">
