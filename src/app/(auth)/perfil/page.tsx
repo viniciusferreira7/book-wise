@@ -21,7 +21,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ProfilePage() {
   const session = await getServerSession(authOptions)
 
-  
 
   return (
     <main className="h-full w-full pt-[4.5rem]">
