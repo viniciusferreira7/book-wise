@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 
 import { authOptions } from '@/lib/auth-options'
+import { getQueryClient } from '@/lib/get-query-client'
+import { getUserOptions } from '@/services/users/get-user-options'
 
 import { Analytics } from './components/analytics'
 import { SearchBook } from './components/search-book'
@@ -21,6 +23,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ProfilePage() {
   const session = await getServerSession(authOptions)
 
+  const queryClient = getQueryClient()
+
+  const [userData] = await Promise.all([
+    queryClient.fetchQuery(getUserOptions({ userId: session?.user.id })),
+  ])
 
   return (
     <main className="h-full w-full pt-[4.5rem]">
@@ -33,7 +40,7 @@ export default async function ProfilePage() {
             <SearchBook />
             <YourBooks />
           </div>
-          <Analytics session={session} />
+          <Analytics session={session} userData={userData} />
         </div>
       </div>
     </main>

@@ -1,20 +1,28 @@
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 import type { Session } from 'next-auth'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import type { GetUserResponse } from '@/services/users/get-user'
 
 import { Metrics } from './metrics'
 
+dayjs.extend(relativeTime)
+
 interface AnalyticsProps {
   session: Session | null
+  userData: GetUserResponse | null
 }
 
-export function Analytics({ session }: AnalyticsProps) {
+export function Analytics({ session, userData }: AnalyticsProps) {
   const avatarUrl = session?.user?.image ?? undefined
 
   const fullName = session?.user?.name ? session?.user?.name?.split(' ') : []
   const fallback = `${fullName[0][0]}${fullName[fullName.length - 1][0]}`
 
   const shortName = `${fullName[0]} ${fullName[fullName.length - 1]}`
+
+  const memberSince = dayjs(userData?.accounts.createdAt).fromNow()
 
   return (
     <div className="flex w-full max-w-80 flex-col items-center gap-8 border-l border-gray-900">
@@ -27,8 +35,7 @@ export function Analytics({ session }: AnalyticsProps) {
           <h2 className="text-lg font-bold text-muted-foreground">
             {shortName}
           </h2>
-          <h3 className="text-gray-400">membro desde ontem</h3>
-          {/* TODO: (Cria uma rota para pegar os dados da conta incluindo a data de criação no app) */}
+          <h3 className="text-gray-400">{memberSince}</h3>
         </div>
       </div>
       <div className="h-2 w-8 rounded-lg bg-gradient-to-b from-[#7FD1CC] to-[#9694F5]" />

@@ -7,7 +7,7 @@ import { api } from '@/lib/axios'
 import { getErrorMessage } from '@/utils/error/get-error-message'
 
 export interface GetUserParams {
-  userId: string
+  userId?: string
 }
 
 export interface GetUserResponse extends User {

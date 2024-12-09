@@ -1,4 +1,4 @@
-import { Book } from './ui/book'
+import { Book } from './book'
 
 export function YourBooks() {
   return (
