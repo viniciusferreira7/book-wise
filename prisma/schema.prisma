@@ -67,8 +67,6 @@ model VerificationToken {
   @@map("verificationtokens")
 }
 
-//TODO: Rodar a migração
-
 model Book {
   id          String   @id @default(cuid())
   name        String
@@ -87,9 +85,9 @@ model Rating {
   id     String @id @default(cuid())
   rating Int    @default(0)
   book   Book   @relation(fields: [bookId], references: [id])
-  bookId String
+  bookId String @map("book_id")
   user   User   @relation(fields: [userId], references: [id])
-  userId String
+  userId String @map("user_id")
 
   @@map("ratings")
 }
