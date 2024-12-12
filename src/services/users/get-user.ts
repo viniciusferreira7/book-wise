@@ -11,15 +11,14 @@ export interface GetUserParams {
 }
 
 export interface GetUserResponse extends User {
-  accounts: Account
+  accounts: Account[]
 }
 
 export async function getUser({
   userId,
 }: GetUserParams): Promise<GetUserResponse | ErrorMessage> {
   try {
-    const { data } = await api.get<GetUserResponse>(`/users/${userId}`)
-
+    const { data } = await api.get<GetUserResponse>(`/users/${userId}/`)
     return data
   } catch (err) {
     return getErrorMessage(err)

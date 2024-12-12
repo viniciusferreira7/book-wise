@@ -6,7 +6,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { SkeletonMetrics } from './components/skeletons/skeleton-metrics'
 import { SkeletonYourBooks } from './components/skeletons/skeleton-your-books'
 
-export function LoadingProfile() {
+export default function LoadingProfile() {
   return (
     <main className="h-full w-full pt-[4.5rem]">
       <div className="flex h-full flex-col gap-10">
@@ -25,7 +25,7 @@ export function LoadingProfile() {
             <div className="flex flex-col items-center gap-5">
               <Skeleton className="size-16" />
 
-              <div>
+              <div className="space-y-2">
                 <Skeleton className="h-7 w-28" />
                 <Skeleton className="h-6 w-28" />
               </div>

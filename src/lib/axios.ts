@@ -1,7 +1,7 @@
-'use server'
-
 import axios from 'axios'
 
+import { env } from '@/env'
+
 export const api = axios.create({
-  baseURL: '/',
+  baseURL: env.NEXTAUTH_URL + '/api',
 })

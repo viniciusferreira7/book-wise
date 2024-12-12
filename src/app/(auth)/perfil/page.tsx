@@ -25,7 +25,7 @@ export default async function ProfilePage() {
 
   const queryClient = getQueryClient()
 
-  const [userData] = await Promise.all([
+  const [getUserData] = await Promise.all([
     queryClient.fetchQuery(getUserOptions({ userId: session?.user.id })),
   ])
 
@@ -40,7 +40,7 @@ export default async function ProfilePage() {
             <SearchBook />
             <YourBooks />
           </div>
-          <Analytics session={session} userData={userData} />
+          <Analytics session={session} user={getUserData} />
         </div>
       </div>
     </main>

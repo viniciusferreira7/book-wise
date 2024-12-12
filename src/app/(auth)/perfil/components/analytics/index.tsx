@@ -11,10 +11,10 @@ dayjs.extend(relativeTime)
 
 interface AnalyticsProps {
   session: Session | null
-  userData: GetUserResponse | null
+  user: GetUserResponse | null
 }
 
-export function Analytics({ session, userData }: AnalyticsProps) {
+export function Analytics({ session, user }: AnalyticsProps) {
   const avatarUrl = session?.user?.image ?? undefined
 
   const fullName = session?.user?.name ? session?.user?.name?.split(' ') : []
@@ -22,7 +22,11 @@ export function Analytics({ session, userData }: AnalyticsProps) {
 
   const shortName = `${fullName[0]} ${fullName[fullName.length - 1]}`
 
-  const memberSince = dayjs(userData?.accounts.createdAt).fromNow()
+  const userAccount = user?.accounts[0]
+
+  const memberSince = userAccount
+    ? dayjs(userAccount?.createdAt).fromNow()
+    : null
 
   return (
     <div className="flex w-full max-w-80 flex-col items-center gap-8 border-l border-gray-900">
@@ -31,7 +35,7 @@ export function Analytics({ session, userData }: AnalyticsProps) {
           <AvatarImage src={avatarUrl} alt="@shadcn" className="rounded-full" />
           <AvatarFallback>{fallback}</AvatarFallback>
         </Avatar>
-        <div>
+        <div className="text-center">
           <h2 className="text-lg font-bold text-muted-foreground">
             {shortName}
           </h2>

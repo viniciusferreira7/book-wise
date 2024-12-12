@@ -1,4 +1,5 @@
 import './globals.css'
+import '../lib/dayjs'
 
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${nunito.variable} bg-background font-nunito text-muted-foreground`}
+        className={`${nunito.variable} min-h-screen bg-background font-nunito text-muted-foreground`}
       >
         <QueryWrapper>
           <SessionWrapper>

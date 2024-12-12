@@ -45,7 +45,7 @@ export async function GET(_request: NextRequest, { params }: Params) {
     })
   }
 
-  return new Response(JSON.stringify({ user }), {
+  return new Response(JSON.stringify(user), {
     status: 200,
   })
 }
