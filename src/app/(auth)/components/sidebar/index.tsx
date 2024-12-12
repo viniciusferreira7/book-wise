@@ -4,7 +4,7 @@ import { Menu } from './components/menu'
 
 export function Sidebar() {
   return (
-    <aside className="h-screen p-5">
+    <aside className="hidden h-screen p-5 lg:fixed lg:block">
       <div className="flex h-full w-56 flex-col items-start rounded-xl bg-[url('/assets/svg/side-bar-background.svg')] px-6 pb-6 pt-10">
         <div className="mb-16 flex items-center justify-center gap-2">
           <Image

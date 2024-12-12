@@ -6,9 +6,9 @@ export default function AuthLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="flex h-screen gap-24">
+    <div className="min-h-screen">
       <Sidebar />
-      {children}
+      <div className="flex h-full gap-24 lg:ml-80">{children}</div>
     </div>
   )
 }
